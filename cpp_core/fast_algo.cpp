@@ -115,9 +115,9 @@ double median(const std::vector<double>& data) {
     }
 }
 
-// ==================== Новые функции ====================
 
-// 1. Линейная регрессия (OLS)
+
+// 6. Линейная регрессия (OLS)
 // Возвращает: (intercept, slope, r_squared)
 std::tuple<double, double, double> linear_regression(const std::vector<double>& x, const std::vector<double>& y) {
     if (x.empty()) throw std::invalid_argument("Input vectors cannot be empty");
@@ -151,7 +151,7 @@ std::tuple<double, double, double> linear_regression(const std::vector<double>& 
     return std::make_tuple(intercept, slope, r_squared);
 }
 
-// 2. Метрики качества (MAE, MSE, RMSE, R²)
+// 7. Метрики качества (MAE, MSE, RMSE, R²)
 // Возвращает: (mae, mse, rmse, r2)
 std::tuple<double, double, double, double> regression_metrics(const std::vector<double>& y_true, const std::vector<double>& y_pred) {
     if (y_true.empty()) throw std::invalid_argument("Input vectors cannot be empty");
@@ -198,7 +198,7 @@ double r2_score(const std::vector<double>& y_true, const std::vector<double>& y_
     return 1.0 - ss_res / ss_tot;
 }
 
-// 3. Поиск пиков (peak detection)
+// 8. Поиск пиков (peak detection)
 std::vector<size_t> find_peaks(const std::vector<double>& data, size_t lookahead = 1, double min_height = 0.0) {
     if (data.size() < 2) return {};
     std::vector<size_t> peaks;
