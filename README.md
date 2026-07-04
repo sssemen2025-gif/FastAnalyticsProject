@@ -122,35 +122,44 @@ C++ модуль компилируется в `.pyd` (динамическая 
 
 ---
 
-Установка и сборка
-Bashgit clone https://github.com/sssemen2025-gif/FastAnalyticsProject.git
+## Установка и сборка
+
+
+git clone https://github.com/sssemen2025-gif/FastAnalyticsProject.git
 cd FastAnalyticsProject
 pip install pybind11
 python setup.py build_ext --inplace
+После сборки появится файл fast_algo.cp312-win_amd64.pyd.
 
-Пример использования
-Pythonimport fast_algo
+##Пример использования
+python
+import fast_algo
 
 data = [1.0, 2.0, 3.0, 4.0, 5.0, 10.0, 11.0]
 
-print(fast_algo.moving_average(data, 3))
-print(fast_algo.median(data))
-Больше примеров смотри в demo.py.
+print(fast_algo.moving_average(data, 3))   # [2.0, 3.0, 4.0, 6.33, 8.67]
+print(fast_algo.median(data))              # 4.0
+print(fast_algo.zscore(data))              # список z-оценок
+Больше примеров в demo.py и benchmark.py.
 
-Технологический стек
+##Технологический стек
+C++17 (STL, pybind11)
 
-C++17 + pybind11
 Python 3.12
+
 MSVC (Visual Studio 2022)
-NumPy, SciPy, Pandas, scikit-learn (для сравнения)
 
+NumPy, SciPy, Pandas, Scikit-learn, StatsModels (только для сравнения в бенчмарках)
 
-Автор
+##Автор
 Савенков Семен
-Проект создан для демонстрации навыков:
+
+##Проект создан для демонстрации навыков:
 
 Высокопроизводительный C++
+
 Разработка Python-расширений (pybind11)
+
 Оптимизация аналитического кода
 
 Июль 2026
